@@ -1,0 +1,52 @@
+{
+  "seed": 0,
+  "base_steps": 5000,
+  "tail": {
+    "steps": 300,
+    "lpips_net": "vgg",
+    "lpips_weight": 0.1,
+    "lr_scale": 0.3,
+    "l1_weight": 0.8,
+    "dssim_weight": 0.2,
+    "freeze_topology": true,
+    "preserve_optimizer_and_sampler": true
+  },
+  "density": {
+    "sh_decay": 0.3,
+    "max_points": 2000000,
+    "densify_start": 100,
+    "densify_stop": 3200,
+    "densify_interval": 100,
+    "alpha_prune": 0.005,
+    "decode_workers": 16,
+    "geometry_options": {
+      "mode": "opacity",
+      "event_steps": [
+        100,
+        300,
+        500
+      ],
+      "patches": 48,
+      "opacity_factor": 0.8,
+      "max_opacity_edits": 128,
+      "max_hook_seconds": 1.5
+    },
+    "relocation_options": {}
+  },
+  "abs_options": {
+    "births_per_event": 20000,
+    "split_fraction": 0.5
+  },
+  "optimizer": {
+    "lambda_dssim": 0.2,
+    "position_lr_init": 0.00032,
+    "position_lr_final": 3.2e-06,
+    "position_lr_max_steps": 8000,
+    "position_lr_delay_mult": 0.01,
+    "feature_lr": 0.0025,
+    "opacity_lr": 0.05,
+    "scaling_lr": 0.01,
+    "rotation_lr": 0.001
+  },
+  "fastgs_mult": 1.0
+}

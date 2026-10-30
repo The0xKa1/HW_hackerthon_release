@@ -1,0 +1,193 @@
+{
+  "architecture": "027 Sparse Adam 5000 + VGG-LPIPS 300 / weight 0.1 / LR x0.3",
+  "formal_acceptance": false,
+  "environment": {
+    "python": "3.12.12",
+    "torch": "2.7.0+cu128",
+    "cuda": "12.8",
+    "numpy": "1.26.4",
+    "gsplat": "1.5.3",
+    "lpips": "0.1.4",
+    "device": "NVIDIA H20",
+    "seed": 0,
+    "runs_per_scene": 1,
+    "environment": "Existing development environment; clean installation not separately tested"
+  },
+  "configuration_sha256": "edbb7793308516a71a94c59e62cdb1ccf69e1f4f1afa415231f0aa5f3cb4fe70",
+  "resources": {
+    "repository": "https://gitcode.com/gcw_yxxmv6uE/hackathon_competition.git",
+    "commit": "a1139a7c2e8856f42859dc3552a209293229b3a5",
+    "checkpoint": "resplat-base-dl3dv-540x960-view16-a72dc6d0.pth",
+    "source_count": 16,
+    "num_refine": 2,
+    "llffhold": 8,
+    "max_resolution": 960,
+    "portrait_max_resolution": 768,
+    "checkpoint_sha256": "a72dc6d0d56f7ccc50d145c17c83d866d4aaa2c13adb1a22f7a84481001e1a4c",
+    "checkpoint_source": "https://huggingface.co/haofeixu/resplat/resolve/main/resplat-base-dl3dv-540x960-view16-a72dc6d0.pth",
+    "fastgs_kernel_repository": "https://github.com/fastgs/FastGS.git",
+    "fastgs_kernel_commit": "44e02a5c1d5e9ed64d2ecd4af1cbba14ac92150f",
+    "fastergs_repository": "https://github.com/GoogolplexGoodenough/FasterGS.git",
+    "fastergs_commit": "c9edd4718204cf87353b7d7e0491dafe66d534ff"
+  },
+  "checks": [
+    {
+      "scene": "dl3dv",
+      "points": 1093062,
+      "test_images": 42,
+      "passed": true
+    },
+    {
+      "scene": "counter",
+      "points": 1118925,
+      "test_images": 30,
+      "passed": true
+    },
+    {
+      "scene": "billboard",
+      "points": 1027016,
+      "test_images": 8,
+      "passed": true
+    }
+  ],
+  "scenes": [
+    {
+      "scene": "dl3dv",
+      "gpu_uuid": "GPU-dbb48715-4012-147b-ec77-bd1900d67066",
+      "resolution": [
+        512,
+        960
+      ],
+      "protocol_sha256": "3210d0a8becda9884da940398bed433a78b237ce9aab887b2aa809945df8a6ee",
+      "metrics": {
+        "psnr": 35.62616729736328,
+        "ssim": 0.9675142168998718,
+        "lpips": 0.06656578928232193
+      },
+      "test_views": 42,
+      "timing": {
+        "A_seconds": 65.58999265701277,
+        "model_process_seconds": 41.90641160402447,
+        "model_load_seconds": 9.19,
+        "model_inference_seconds": 4.38,
+        "B_worker_process_including_render_seconds": 81.30348027299624,
+        "B_input_inclusive_seconds": 70.04816634603776,
+        "upstream_postprocess_and_overhead_seconds": 28.336411604024473,
+        "B_seconds": 98.38457795006224,
+        "B_time_scope": "worker launch through final PLY, plus frozen wrapper non-load/non-forward overhead; excludes final RGB rendering and metric evaluation",
+        "render_seconds": 10.278514295001514,
+        "end_to_end_to_ply_seconds": 179.0395766820293,
+        "pipeline_including_render_seconds": 189.31809247401543,
+        "evaluation_seconds": 13.602765675983392
+      },
+      "score": {
+        "quality": 73.18777598142624,
+        "time": 2.6857736971053647,
+        "total": 75.8735496785316,
+        "within_strict_B_budget": true,
+        "convention": "clip scene mean metrics to chart ranges; pending organizer aggregation details"
+      },
+      "points": 1093062,
+      "FastGS_reference_seconds": 111.91,
+      "T_iter_seconds": 0.0037303333333333333,
+      "reference_repeats": 1,
+      "reference_reused": true,
+      "reference_protocol": "Official random-init FastGS, 30000 steps, mult=0.5, same GPU and prepared scene",
+      "frozen_sources_unchanged": true,
+      "tail_preserved_momentum": true,
+      "tail_fixed_topology": true
+    },
+    {
+      "scene": "billboard",
+      "gpu_uuid": "GPU-7e73872c-9c30-6d9d-5c42-7c57e470a2f4",
+      "resolution": [
+        768,
+        512
+      ],
+      "protocol_sha256": "c89eebbf3180ab64991362c15c4f11ae703a07c59a304f088097752e2a98bc37",
+      "metrics": {
+        "psnr": 22.935890197753906,
+        "ssim": 0.8088905215263367,
+        "lpips": 0.12106338143348694
+      },
+      "test_views": 8,
+      "timing": {
+        "A_seconds": 291.46582050202414,
+        "model_process_seconds": 32.65569308499107,
+        "model_load_seconds": 5.42,
+        "model_inference_seconds": 2.96,
+        "B_worker_process_including_render_seconds": 58.53764478804078,
+        "B_input_inclusive_seconds": 54.409653368988074,
+        "upstream_postprocess_and_overhead_seconds": 24.27569308499107,
+        "B_seconds": 78.68534645397915,
+        "B_time_scope": "worker launch through final PLY, plus frozen wrapper non-load/non-forward overhead; excludes final RGB rendering and metric evaluation",
+        "render_seconds": 3.070892894989811,
+        "end_to_end_to_ply_seconds": 379.689752581995,
+        "pipeline_including_render_seconds": 382.76064704498276,
+        "evaluation_seconds": 7.646734600013588
+      },
+      "score": {
+        "quality": 40.847277593612674,
+        "time": 7.130186536628661,
+        "total": 47.97746413024134,
+        "within_strict_B_budget": true,
+        "convention": "clip scene mean metrics to chart ranges; pending organizer aggregation details"
+      },
+      "points": 1027016,
+      "FastGS_reference_seconds": 115.86,
+      "T_iter_seconds": 0.003862,
+      "reference_repeats": 1,
+      "reference_reused": false,
+      "reference_protocol": "Official random-init FastGS, 30000 steps, mult=0.5, same GPU and prepared scene",
+      "frozen_sources_unchanged": true,
+      "tail_preserved_momentum": true,
+      "tail_fixed_topology": true
+    },
+    {
+      "scene": "counter",
+      "gpu_uuid": "GPU-7e73872c-9c30-6d9d-5c42-7c57e470a2f4",
+      "resolution": [
+        576,
+        960
+      ],
+      "protocol_sha256": "ca97e337a6a243b3b679b0c5ddc8f22057d1c1df55044d0507e37cd2c9ea00a0",
+      "metrics": {
+        "psnr": 28.3498477935791,
+        "ssim": 0.9010324478149414,
+        "lpips": 0.1514027714729309
+      },
+      "test_views": 30,
+      "timing": {
+        "A_seconds": 109.73672906000866,
+        "model_process_seconds": 41.290773376007564,
+        "model_load_seconds": 5.91,
+        "model_inference_seconds": 4.33,
+        "B_worker_process_including_render_seconds": 78.03795661299955,
+        "B_input_inclusive_seconds": 67.30323634302476,
+        "upstream_postprocess_and_overhead_seconds": 31.05077337600757,
+        "B_seconds": 98.35400971903233,
+        "B_time_scope": "worker launch through final PLY, plus frozen wrapper non-load/non-forward overhead; excludes final RGB rendering and metric evaluation",
+        "render_seconds": 9.716405313985888,
+        "end_to_end_to_ply_seconds": 219.82667047902942,
+        "pipeline_including_render_seconds": 229.54307711299043,
+        "evaluation_seconds": 12.45026572101051
+      },
+      "score": {
+        "quality": 46.48191976547241,
+        "time": 2.0408310825828786,
+        "total": 48.52275084805529,
+        "within_strict_B_budget": true,
+        "convention": "clip scene mean metrics to chart ranges; pending organizer aggregation details"
+      },
+      "points": 1118925,
+      "FastGS_reference_seconds": 108.3,
+      "T_iter_seconds": 0.00361,
+      "reference_repeats": 1,
+      "reference_reused": true,
+      "reference_protocol": "Official random-init FastGS, 30000 steps, mult=0.5, same GPU and prepared scene",
+      "frozen_sources_unchanged": true,
+      "tail_preserved_momentum": true,
+      "tail_fixed_topology": true
+    }
+  ]
+}

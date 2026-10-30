@@ -1,0 +1,16 @@
+{
+  "repository": "https://gitcode.com/gcw_yxxmv6uE/hackathon_competition.git",
+  "commit": "a1139a7c2e8856f42859dc3552a209293229b3a5",
+  "checkpoint": "resplat-base-dl3dv-540x960-view16-a72dc6d0.pth",
+  "source_count": 16,
+  "num_refine": 2,
+  "llffhold": 8,
+  "max_resolution": 960,
+  "portrait_max_resolution": 768,
+  "checkpoint_sha256": "a72dc6d0d56f7ccc50d145c17c83d866d4aaa2c13adb1a22f7a84481001e1a4c",
+  "checkpoint_source": "https://huggingface.co/haofeixu/resplat/resolve/main/resplat-base-dl3dv-540x960-view16-a72dc6d0.pth",
+  "fastgs_kernel_repository": "https://github.com/fastgs/FastGS.git",
+  "fastgs_kernel_commit": "44e02a5c1d5e9ed64d2ecd4af1cbba14ac92150f",
+  "fastergs_repository": "https://github.com/GoogolplexGoodenough/FasterGS.git",
+  "fastergs_commit": "c9edd4718204cf87353b7d7e0491dafe66d534ff"
+}
