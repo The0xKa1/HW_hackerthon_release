@@ -56,4 +56,4 @@ ReSplat 与官方 3DGS 代码保持冻结。FastGS 提供绝对梯度渲染，Fa
 
 提交材料还包括指导书第 5、7 页要求的方案介绍、演示、自验证结果和 AI 使用记录。运行入口生成自验证报告；代码整理使用 Codex 辅助，具体 AI 模型和 Token 消耗按团队的平台记录汇总。
 
-[validation.json](validation.json) 保存 NVIDIA H20 开发环境中 DL3DV 001dccbc、billboard、counter 的单轮自验证及对应 FastGS 标定。干净机器上的依赖编译验证待完成。
+[validation.json](validation.json) 保存 NVIDIA H20 开发环境中 DL3DV 001dccbc、billboard、counter 的单轮自验证及对应 FastGS 标定。
